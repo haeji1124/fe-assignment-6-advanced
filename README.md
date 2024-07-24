@@ -1,7 +1,5 @@
 ## 개요
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/6912169d-ce70-41bf-b624-946d4ee984eb/Untitled.png)
-
 GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행되도록 함
 
 1. 저장소를 체크아웃합니다.
@@ -14,13 +12,13 @@ GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행
 
 ## 주요 링크
 
-- S3 버킷 웹사이트 엔드포인트: _________
-- CloudFrount 배포 도메인 이름: _________
+- S3 버킷 웹사이트 엔드포인트: http://hanghae-front2.s3-website.ap-northeast-2.amazonaws.com/
+- CloudFrount 배포 도메인 이름: https://d2djy75mjwwhun.cloudfront.net/
 
 ## 주요 개념
 
-- GitHub Actions과 CI/CD 도구: _________
-- S3와 스토리지: _________
-- CloudFront와 CDN: _________
-- 캐시 무효화(Cache Invalidation): _________
-- Repository secret과 환경변수: _________
+- GitHub Actions과 CI/CD 도구: GitHub에서 제공하는 자동화된 워크플로우 실행 도구로, 코드 변경 시 자동으로 빌드, 테스트, 배포 등의 작업을 수행할 수 있게 해준다.
+- S3와 스토리지: Amazon Simple Storage Service의 약자로, 확장성이 뛰어난 객체 스토리지 서비스이다. 웹 호스팅에도 사용될 수 있어 정적 웹사이트를 호스팅하는 데 적합하다.
+- CloudFront와 CDN: Amazon의 콘텐츠 전송 네트워크(CDN) 서비스로, 전 세계에 분산된 엣지 로케이션을 통해 콘텐츠를 빠르게 전달한다. S3와 함께 사용하여 웹사이트의 성능을 향상시킬 수 있다.
+- 캐시 무효화(Cache Invalidation): CDN의 엣지 로케이션에 저장된 캐시된 콘텐츠를 강제로 새로고침하는 프로세스이다. 이를 통해 업데이트된 콘텐츠를 즉시 사용자에게 제공할 수 있다.
+- Repository secret과 환경변수: GitHub 리포지토리에 안전하게 저장되는 암호화된 환경 변수다. AWS 접근 키와 같은 민감한 정보를 저장하는 데 사용되며, 워크플로우 실행 중에 안전하게 접근할 수 있다.
