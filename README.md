@@ -1,14 +1,24 @@
-## 개요
-
+## 배포 Flow
 GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행되도록 함
+  1. 저장소를 체크아웃합니다.
+  2. Node.js 18.x 버전을 설정합니다.
+  3. 프로젝트 의존성을 설치합니다.
+  4. Next.js 프로젝트를 빌드합니다.
+  5. AWS 자격 증명을 구성합니다.
+  6. 빌드된 파일을 S3 버킷에 동기화합니다.
+  7. CloudFront 캐시를 무효화합니다.
 
-1. 저장소를 체크아웃합니다.
-2. Node.js 18.x 버전을 설정합니다.
-3. 프로젝트 의존성을 설치합니다.
-4. Next.js 프로젝트를 빌드합니다.
-5. AWS 자격 증명을 구성합니다.
-6. 빌드된 파일을 S3 버킷에 동기화합니다.
-7. CloudFront 캐시를 무효화합니다.
+배포를 위해 Repository secret과 환경변수를 설정합니다.
+- AWS_ACCESS_KEY_ID : IAM user의 액세스 키
+- AWS_SECRET_ACCESS_KEY: IAM user의 비밀 맥세스 키
+- AWS_REGION : s3 버킷의 region
+- CLOUDFRONT_DISTRIGUTION_ID: ClounFront distribution ID
+
+![image](https://github.com/user-attachments/assets/5ea0f688-90aa-4854-8748-e955e6decbdd)
+
+
+사용자가 웹사이트 접속했을 때 CloudFront에 캐시가 있다면 정적파일 반환되고 없다면 S3에 정적파일을 요청해서 CloudFront가 정적파일을 가지고 있게 된다.
+깃 repo에서 commit이 발생하면 CI 파이프라인에 의해 빌드가 되고 산출물이 S3에 업로드 된다.
 
 ## 주요 링크
 
