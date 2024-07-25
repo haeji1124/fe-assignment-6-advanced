@@ -14,7 +14,8 @@ GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행
 - AWS_REGION : s3 버킷의 region
 - CLOUDFRONT_DISTRIGUTION_ID: ClounFront distribution ID
 
-![image](https://github.com/user-attachments/assets/5ea0f688-90aa-4854-8748-e955e6decbdd)
+![image](https://github.com/user-attachments/assets/65b9e62c-c846-4da0-aa61-cea83f9c1ac9)
+
 
 
 사용자가 웹사이트 접속했을 때 CloudFront에 캐시가 있다면 정적파일 반환되고 없다면 S3에 정적파일을 요청해서 CloudFront가 정적파일을 가지고 있게 된다.
